@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Job;
+use App\User\Generator\JobMessageGenerator;
+use App\User\Generator\MessageGenerator;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 
 
 class JobController extends Controller {
@@ -23,33 +26,22 @@ class JobController extends Controller {
 		$offre = new \stdClass();
 		$offre->titre = 'On recherche un dev';
 		$offre->contenu='index';
-		return $this->render('job/index.html.twig', [
+		return $this->render('base.html.twig', [
 				'offre'=> $offre
-
 		]);
 	}
 
         /**
          *
-         * @Route("/contact")
+         * @Route("/job/contact")
          * @return Response
          */
 	public function contactAction() {
 		return $this->render('job/contact.html.twig');
 	}
 
-		/**
-         * @Route("/job/{id}")
-       
 
-
-	public function jobShowAction($id) {
-		
-		return $this->render('job/job_show.html.twig', ['id' => $id]);
-	}
-        **/
-
-        /**
+         /**
          * @Route("/job/write")
          * @return Response
          */
@@ -70,19 +62,47 @@ class JobController extends Controller {
     }
 
     /**
-     * @Route("/job/show/{id}")
+     * @Route("/job/show/{id}", requirements={"id"="\d+"})
      * @return Response
      */
-
-    public function jobShowAnnonceAction($id)
+    public function jobShowAnnonceAction(int $id)
     {
         $job = $this->getDoctrine()->getRepository(Job::class)->find($id);
 
         if(!$job){
-            throw $this->createNotFoundException("L'offre N°$id n'existe pas, kiffe ton chômage!");
+            throw $this->createNotFoundException('L\'offre N°' . $id . 'n\'existe pas, kiffe ton chômage!');
         }
 
         return $this->render('job/job_show_annonce.html.twig', ['job' => $job]);
+    }
+
+    /**
+     * @Route("/job/{id}")
+     * @return Response
+     */
+
+    public function jobShowAction($id) {
+
+        return $this->render('job/job_show.html.twig', ['id' => $id]);
+    }
+
+    /**
+     * @Route("/testMessage")
+     * @return Response
+     */
+    public function testAction() {
+        $message = $this->get('userGenMessage')->getRandomMessage();
+        var_dump($message); exit;
+    }
+
+    /**
+     * @Route("/test2Message")
+     * @return Response
+     */
+    public function secondTestAction()
+    {
+        $message = $this->get('jobGenMessage')->getRandomMessage();
+        var_dump($message); exit;
     }
 
 }

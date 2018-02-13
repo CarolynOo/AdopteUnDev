@@ -1,17 +1,82 @@
-{% extends "base.html.twig" %}
+    <!-- ***** HEADER ***** -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <img src="/images/logo.jpg" alt="image logo" class="logo__img"></img>
+                <h1>Adopte un Dev!</h1>
+            </div>
+            <div class="header__login-section">
+                <label>Login</label>
+                <input required type="text" placeholder="Pseudo" name="name">
+                <label>Password</label>
+                <input required type="password" placeholder="Mot de passe" name="psw">
+                <button type="submit">Go</button>
+                <label>
+                    <input type="checkbox" checked="checked">Se souvenir de moi
+                </label>
+            </div>
+        </div>
+        <div class="header__nav ">
+        <div class="header__nav links">
+            <a href="#" class="nav__link">Nouveaux inscrits</a>
+            <a href="#" class="nav__link">Notre sélection</a>
+            <a href="#" class="nav__link">Spécialités</a>
+            <a href="#" class="nav__link">Près de chez toi</a>
+        </div>
+        <div class="header__nav search">
+            <input type="text" placeholder="Search..">
+        </div>
+        </div>
+        </div>
+    </header>
+    <!-- ***** HEADER END ***** -->
 
-{% block body %}
-
-<div class="jumbotron">
-
-	<div class="container">
-
-
-		<h1 class="display-3"> La Plus Belle Page d'Accueil du MONDE</h1>
-
-
-
-</div>
-</div>
-
-{% endblock %}
+    
+    <main class="main">
+        <section class="main__signup-section">
+            <style>
+            </style>
+            <form class="signup__form">
+                <h2>Inscris-toi</h2>
+                <input type="text" name="username" placeholder="Pseudo"/>
+                <input type="text" name="email" placeholder="E-mail"/>
+                <input type="password" name="password" placeholder="Mot de passe"/>
+                <input type="password" name="password2" placeholder="Mot de passe bis"/>
+                <input type="submit" name="signup_submit" value="C'est parti!"/>
+            </form>
+        </section>
+        <section class="main__profile-section">
+            <h2>Perles rares</h2>
+            <p>Slider avec 3 vignettes... mais je ne sais pas comment on fait </p>
+        </section>
+    </main>
+   
+    <!-- ***** FOOTER ***** -->
+    <footer class="footer">
+        <section class="footer__social-section">
+            <h3>Social</h3> 
+            <div class="facebook">
+                <a href="#">
+                <i class="fa fa-facebook-official" aria-hidden="true">Facebook</i>
+            	</a>
+            </div>
+            <div class="linkedin">
+                <a href="#">
+                <i class="fa fa-linkedin-square" aria-hidden="true">LinkedIn</i>
+            	</a>
+            </div>
+            <div class="youtube">
+                <a href="#">
+               <i class="fa fa-youtube-square" aria-hidden="true">YouTube</i>
+            	</a>
+            </div>
+            
+        </section>
+        <section class="footer__copyright-section">
+            <h3>Adopte un Dev</h3>
+        </section>
+        <section class="footer__contact-section">
+            <h3>Nous contacter</h3>
+        </section>
+    </footer>
+    <!-- ***** END FOOTER ***** -->

@@ -1,0 +1,61 @@
+Développe une api de calcul de TVA selon le pays.
+
+J'ai une route de l'API qui prend en paramètres:
+* le montant HT 
+* l'id du pays. 
+
+Dans un premier temps on gérera le :
+*La livre sterling
+*l’euro
+*le dollars.
+
+Le montant sera contenu dans un objet de devise qui contiendra:
+* le montant HT
+* la valeur TTC
+* la devise
+--> La méthode toString retournera la valeur TTC avec sa devise.
+
+J'aurai besoin d'un calculateur de montant selon le pays:
+Euro:
+Autriche
+Belgique
+Chypre 
+Espagne
+Estonie
+Finlande
+France
+Grèce
+Irlande
+Italie
+Lettonie
+Lituanie
+Luxembourg
+Malte
+Pays-Bas
+Portugal
+Slovaquie
+Slovénie
+
+Livre Sterling:
+Angleterre
+Ecosse
+IrlandeDuNord
+PaysDeGalle
+
+Dollars
+USA
+
+
+Lorsqu'on lui fournit un pays en paramètre, ainsi qu'une valeur il retourne un object montant. 
+Quand (Pays, Valeur)
+→ return Object Montant
+
+J'attends que tu implémentes le pattern Factory. 
+→ Implémenter Pattern Factory avec une classe
+
+Cette classe implémentera une interface qui sera commune à toutes tes Factory. (fonction create)
+
+Comme expliqué hier ta Factory ne devra pas faire le calcul HT/TTC, on injectera donc dans la Factory une classe de calcul de TVA.
+ (On verra ensemble l'injection de dépendance).
+
+L'API retourne l'objet au format json avec son prix TTC, son prix HT, son format toString.

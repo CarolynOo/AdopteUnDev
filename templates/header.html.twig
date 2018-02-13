@@ -1,0 +1,38 @@
+<header class="header">
+    <div class="header__inner">
+        <div class="header__logo">
+            <img src="{{ asset('assets/images/logo.jpg')}}" alt="image logo" class="logo__img"></img>
+            <h1>Adopte un Dev!</h1>
+        </div>
+        <div class="header__login-section login-section">
+            <div class="login-section__inputs-container inputs-container">
+                <div class="inputs-container__login-container">
+                    <label></label>
+                    <input required type="text" placeholder="Pseudo" name="name">                
+                </div>
+                <div class="inputs-container__password-container">
+                    <label></label>
+                    <input required type="password" placeholder="Mot de passe" name="psw">
+                </div>
+            </div>
+            <div class="login-section__button-container">
+                <button type="submit">Go</button>
+                <label>
+                    <input type="checkbox" checked="checked">Se souvenir de moi
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="header__nav">
+        <div class="header__nav-links">
+            <a href="#" class="nav__link">Nouveaux inscrits</a>
+            <a href="#" class="nav__link">Notre sélection</a>
+            <a href="#" class="nav__link">Spécialités</a>
+            <a href="#" class="nav__link">Près de chez toi</a>
+        </div>
+        <div class="header__nav-search">
+            <input type="text" placeholder="Search..">
+        </div>
+    </div>
+</div>
+</header>

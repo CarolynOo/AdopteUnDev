@@ -1,0 +1,340 @@
+/*
+* === IMPORTS ===
+*/
+@import "compass";
+
+
+/*
+* === RESET === 
+*/
+@import "compass/reset";
+
+/*
+* === VARIABLES ===
+*/
+
+/*
+* — colors —
+*/
+
+/*
+* === GLOBAL RULES ===
+*/
+
+// global container class
+.container{
+	width: 84%;
+	margin: 0 auto;
+}
+
+*{
+	box-sizing:border-box;
+}
+
+body{
+	margin:0 auto;
+	font-family: 'Open Sans', serif;
+	font-weight: lighter;
+	line-height: 1.5em;
+	color: #000;
+	background-color: #ffff;
+}
+
+// links
+a{
+	text-decoration: none;
+	padding-right: 30px;
+}
+
+/* unvisited link */
+a:link {
+	color: #fff;
+}
+
+/* visited link */
+a:visited {
+	color: #286f8b;
+}
+
+/* mouse over link */
+a:hover {
+	color: #fff;
+}
+
+/* selected link */
+a:active {
+	color: yellow;
+}
+
+/*
+* === HEADER ===
+*/
+
+.header{
+	&__inner{
+
+		display:flex;
+		justify-content: space-between;
+		background-color: #3383a4;
+
+	}
+
+	&__logo{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		img{
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+
+	h1{
+
+		font-size: 2em;
+		font-family: 'Press Start 2P', cursive;
+		font-weight:  lighter;
+		padding: 10px;
+		color:#ffff;
+
+	}
+
+	&__login-section, .login-section{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		text-decoration: none;
+		padding: 10px;
+		width: 600px;
+		&__inputs-container, .inputs-container{
+			// style des inputs
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: flex-start;
+			height: 70px;
+			width: 250px;
+			&__login-container{
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+			}
+			&__password-container{
+				@extend .inputs-container__login-container;
+			}
+		}
+		&__button-container{
+			width: 250px;
+		}
+	}
+	
+	&__nav{
+		display:flex;
+		justify-content: space-between;
+		background-color: lightseagreen;
+		padding: 5px 8%;
+	}
+
+
+	&__nav-links {
+
+		font-family: 'Open Sans', serif;
+		font-weight: bold;
+		
+	}
+
+
+
+}
+/*
+* === MAIN ===
+*/
+
+.signup__form{
+
+	
+	background-color: #828282;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px auto;
+	justify-content: center;
+	width: 30%;
+
+	input{
+
+		width: auto;
+		padding: 12px 20px;
+		margin: 8px 0;
+		//box-sizing: border-box;
+
+	}
+
+}
+
+
+.main__profile-section{
+
+	
+}
+
+/*
+* === Carrousel ===
+*/
+
+.carousel-container {
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.carousel {
+	display: flex;
+	left: -100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	transform: translateX(100%);
+}
+
+@media (min-width: 30em) {
+	.carousel {
+		left: -50%;
+		transform: translateX(50%);
+	}
+}
+
+@media (min-width: 40em) {
+	.carousel {
+		left: -33.33333%;
+		transform: translateX(33.33333%);
+	}
+}
+
+.carousel.is-reversing {
+	transform: translateX(-100%);
+}
+
+@media (min-width: 30em) {
+	.carousel.is-reversing {
+		transform: translateX(-50%);
+	}
+}
+
+@media (min-width: 40em) {
+	.carousel.is-reversing {
+		transform: translateX(-33.33333%);
+	}
+}
+
+.carousel.is-set {
+	transform: none;
+	transition: transform 0.5s ease-in-out;
+}
+
+.carousel-seat {
+	background: transparent;
+	flex: 1 0 100%;
+	order: 2;
+}
+
+.carousel-seat:nth-child(even) {
+	background: transparent;
+}
+
+@media (min-width: 30em) {
+	.carousel-seat {
+		flex-basis: 50%;
+	}
+}
+
+@media (min-width: 40em) {
+	.carousel-seat {
+		flex-basis: 33.33333%;
+	}
+}
+
+.carousel-seat.is-ref {
+	order: 1;
+}
+
+.container img {
+	width: 300px;
+	height: auto;
+	font-weight: normal;
+	margin: 0;
+	padding: 0.6em 0;
+	text-align: center;
+}
+
+.controls {
+	padding: 1em;
+	text-align: center;
+}
+
+.controls button {
+	background: #aaa;
+	border: 0;
+	border-radius: 0.25em;
+	color: #eee;
+	padding: 0.5em 1em;
+}
+
+.controls button:hover,
+.controls button:focus {
+	background: orange;
+}
+
+
+
+/*
+* === FOOTER ===
+*/
+.footer {
+
+	.fa a{
+		font-family: 'Open Sans', serif;
+		color:#FFF;
+	}
+
+	h3{
+		text-align: center;
+		font-weight: bold;
+		
+	}
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+
+
+	&__social-section {
+
+		background-color: #286f8b;
+		flex-basis: 100%;
+		margin-right: 5px;
+
+	}
+
+	&__copyright-section{
+
+		background-color: #286f8b;
+		flex-basis: 100%;
+		margin-right: 5px;
+	}
+
+
+	&__contact-section{
+
+		background-color: #286f8b;
+		flex-basis: 100%;
+	}
+
+
+}

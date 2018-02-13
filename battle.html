@@ -1,0 +1,13 @@
+J'aurai besoin d'un simulateur de bataille.
+Chaque bataille se comporte avec 2 factions composés d'un nombre de chevalier, de guerrier et d'archer.
+Chaque chevalier, guerrier, archer à un nombre de point de vie et une valeur d'attaque.
+
+J'aurai besoin que tu créés ces 3 classes. Ces classes implémentes une interface CharacterInterface qui demande d'implémenter 2 fonctions : attaquer et perdre des points de vie.
+
+J'aurai besoin que tu créés 3 Factory (une pour chaque personnage) qui créé un personnage avec ses PV et sa valeur d'attaque. Ces 3 factory implémenteront une interface qui demande d'implémenter 1 fonction : create qui créé une classe, et createCharacters(int) qui créé un tableau de personnage.
+
+Une fois que tu as généré tes 2 factions. J'aurai besoin d'un générateur de combat.
+Le camp ayant le plus de chevalier prend l'initiative (attaque le premier). Le combat est résolu en 5 tours. Chaque tour, tu prends ta valeur d'attaque que tu compares a la valeur de point de vie. 
+Tu enlèves les pertes (archer en premier, puis chevalier, puis guerrier). Ainsi de suite.
+
+A la fin tu affiches celui qui a le plus d'armée. Celui-ci remporte la victoire.

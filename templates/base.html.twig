@@ -1,31 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
+{# layout va être ma base commune a toutes mes pages html de mon projet #}
+{% extends "layout.html.twig" %}
 
-        <title>{% block title %}{% endblock %}</title>
-
-        {% block stylesheets %}
-
-        <link rel="stylesheet" href="{{asset('build/css/app.css')}}">
-
-        {% endblock %}
-
-    </head>
-
-    <body>
-
-
-
-        {% block body %}{% endblock %}
-
-
-        {% block javascripts %}
-
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>    
-        <script src="{{asset('build/js/app.js')}}"></script>
-        {% endblock %}
-    </body>
-</html>
+{# content va être tout simplement le contenu de ma page #}
+{% block content %}
+    {# ici j'include header pour appeler ma nav header et ma balise ainsi que son contenu sur ma page car j'en ai besoin #}
+    {# ici je précise que dans header.html.twig j'appelle le block header #}
+    {% include 'header.html.twig' %}
+    {% include 'main.html.twig' %}
+    {% include 'footer.html.twig' %}
+{% endblock %}

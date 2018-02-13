@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>{% block title %} Adopte un Dev !!{% endblock %}</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Kaushan+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans|Press+Start+2P" rel="stylesheet">
+	<link rel="stylesheet" href="{{asset('/build/Font-Awesome/css/font-awesome.css')}}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="{{asset('/build/css/main.css')}}">
+</head>
+
+<body>
+
+	<!-- ici sera présent le contenu de ma page quand j'extend layout.html.twig -->
+	{% block content '' %}
+
+		<script src="{{ asset('js/script/main.js') }}"></script>
+		<script src="{{asset('js/vendor/jquery-3.3.1.min.js')}}"></script>
+
+
+		
+	</body>
+	</html>
+

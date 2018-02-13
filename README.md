@@ -59,8 +59,7 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [Symfony 4](www.symfony.com) - PHP Framework
-* [Bootstrap](https://getbootstrap.com/) - CSS Framework
-
+* [Compass & Sass]() - SCSS Compiler 
 
 ## Contributing
 
@@ -69,3 +68,11 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 ## Authors
 
 * **Carolyn Oo** - [GitHub](https://github.com/CarolynOo)
+
+## Style
+
+To watch and live compiling the styleshett use this command line
+`$ root compass watch`
+
+To compile only
+`$ root compass compile`

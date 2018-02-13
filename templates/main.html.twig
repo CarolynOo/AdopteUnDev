@@ -1,0 +1,59 @@
+ 
+<div class="container">
+ <main class="main">
+    <section class="main__signup-section">
+        
+        {% block signupForm %}
+            <form class="signup__form">
+                <h2>Inscris-toi</h2>
+                <input type="text" name="username" placeholder="Pseudo"/>
+                <input type="text" name="email" placeholder="E-mail"/>
+                <input type="password" name="password" placeholder="Mot de passe"/>
+                <input type="password" name="password2" placeholder="Mot de passe bis"/>
+                <input type="submit" name="signup_submit" value="C'est parti!"/>
+            </form>
+        {% endblock %}
+
+    </section>
+
+   
+    <section class="main__profile-section">
+    {% block carrousel %}
+    <div class='carousel-container'>
+              <ul class='carousel is-ref'>
+                <li class='carousel-seat '>
+                
+                  <img src="{{ asset('assets/images/resized/21.jpg')}}" alt="dev1" class="carrousel_img"></img>
+              </li>
+              <li class='carousel-seat'>
+                  
+                  <img src="{{ asset('assets/images/resized/15.jpg')}}" alt="dev2" class="carrousel_img"></img>
+              </li>
+              <li class='carousel-seat'>
+                  
+                  <img src="{{ asset('assets/images/resized/16.jpg')}}" alt="dev3" class="carrousel_img"></img>
+              </li>
+              <li class='carousel-seat'>
+                  
+                  <img src="{{ asset('assets/images/resized/22.jpg')}}" alt="dev4" class="carrousel_img"></img>
+              </li>
+              <li class='carousel-seat'>
+                 
+                  <img src="{{ asset('assets/images/resized/18.jpg')}}" alt="dev5" class="carrousel_img"></img>
+              </li>
+              <li class='carousel-seat is-set'>
+                 
+                  <img src="{{ asset('assets/images/resized/19.jpg')}}" alt="dev6" class="carrousel_img"></img>
+              </li>
+          </ul>
+      </div>
+      <div class='controls'>
+          <button class='toggle' data-toggle='prev'>Prev</button>
+          <button class='toggle' data-toggle='next'>Next</button>
+      </div>
+    {% endblock %}  
+    </section>
+
+</main>
+</div>
+

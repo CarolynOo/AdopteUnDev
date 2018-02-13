@@ -39,6 +39,13 @@ class Job
   	protected $categories;
 
     /**
+     *
+     *@ORM\Column(type="string")
+     */
+    protected $slug;
+
+
+    /**
      * @return mixed
      */
     public function getCategories()
@@ -54,6 +61,7 @@ class Job
         $this->categories = $categories;
         return $this;
     }
+
 
 
 
@@ -89,6 +97,21 @@ class Job
         $this->description = $description;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setSlug($slug): void
+    {
+        $this->slug = $slug;
+    }
 
 
 
